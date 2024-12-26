@@ -7,27 +7,26 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // このウィジェットはアプリケーションのルートです。
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
+        // これはアプリケーションのテーマです。
         //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
+        // 試してみてください: "flutter run"でアプリケーションを実行してみてください。
+        // アプリケーションには紫色のツールバーがあります。その後、アプリを終了せずに、
+        // 下のcolorSchemeのseedColorをColors.greenに変更して、
+        // "hot reload"を実行してみてください（変更を保存するか、Flutter対応のIDEで
+        // "hot reload"ボタンを押すか、コマンドラインでアプリを開始した場合は"r"を押します）。
         //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
+        // カウンターがゼロにリセットされないことに注意してください。
+        // リロード中にアプリケーションの状態は失われません。状態をリセットするには、
+        // hot restartを使用してください。
         //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
+        // これは値だけでなくコードにも適用されます: ほとんどのコード変更は
+        // hot reloadでテストできます。
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -39,14 +38,13 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+  // このウィジェットはアプリケーションのホームページです。
+  // 状態を持つため、Stateオブジェクト（以下で定義）があり、
+  // その見た目に影響を与えるフィールドを含んでいます。
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  // このクラスは状態の設定です。親（この場合はAppウィジェット）から提供され、
+  // Stateのbuildメソッドで使用される値（この場合はタイトル）を保持します。
+  // Widgetサブクラスのフィールドは常に"final"とマークされます。
 
   final String title;
 
@@ -59,54 +57,52 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+      // このsetStateの呼び出しは、FlutterフレームワークにこのStateで何かが
+      // 変更されたことを伝え、以下のbuildメソッドを再実行させ、
+      // 表示が更新された値を反映できるようにします。
+      // setState()を呼び出さずに_counterを変更した場合、
+      // buildメソッドは再度呼び出されず、何も起こらないように見えます。
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
+    // このメソッドは、setStateが呼び出されるたびに再実行されます。
+    // 例えば、上記の_incrementCounterメソッドによって呼び出されます。
     //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    // Flutterフレームワークは、buildメソッドを再実行することを最適化しているため、
+    // 更新が必要なものを再構築するだけで済み、ウィジェットのインスタンスを
+    // 個別に変更する必要はありません。
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
+        // 試してみてください: ここで色を特定の色（例えばColors.amber）に変更し、
+        // hot reloadをトリガーして、AppBarの色が他の色が同じままで変わるのを見てください。
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+        // ここでは、App.buildメソッドによって作成されたMyHomePageオブジェクトから
+        // 値を取得し、それをappbarのタイトルに設定します。
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+        // Centerはレイアウトウィジェットです。単一の子を取り、
+        // 親の中央に配置します。
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
+          // Columnもレイアウトウィジェットです。子のリストを取り、
+          // 垂直に配置します。デフォルトでは、子に合わせて横方向にサイズを調整し、
+          // 親と同じ高さになろうとします。
           //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
+          // Columnには、サイズを調整する方法や子を配置する方法を制御する
+          // さまざまなプロパティがあります。ここでは、mainAxisAlignmentを使用して
+          // 子を垂直に中央に配置しています。ここでの主軸は垂直軸です。
+          // Columnは垂直だからです（交差軸は水平になります）。
           //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
+          // 試してみてください: "デバッグペイント"を呼び出して（IDEで
+          // "Toggle Debug Paint"アクションを選択するか、コンソールで"p"を押します）、
+          // 各ウィジェットのワイヤーフレームを見てください。
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'ボタンを押した回数:',
             ),
             Text(
               '$_counter',
@@ -117,9 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        tooltip: 'インクリメント',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), // この末尾のカンマは、buildメソッドの自動フォーマットをより良くします。
     );
   }
 }
