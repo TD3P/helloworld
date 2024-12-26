@@ -78,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // 更新が必要なものを再構築するだけで済み、ウィジェットのインスタンスを
     // 個別に変更する必要はありません。
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 208, 208, 208),
       appBar: AppBar(
         // 試してみてください: ここで色を特定の色（例えばColors.amber）に変更し、
         // hot reloadをトリガーして、AppBarの色が他の色が同じままで変わるのを見てください。
@@ -110,6 +111,30 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('$_counter'),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: Text('$_counter'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('$_counter'),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.filter_drama),
+            ),
+            FilledButton(
+              onPressed: () {},
+              child: Text('$_counter'),
+            ),
+            FilledButton.tonal(
+              onPressed: () {},
+              child: Text('$_counter'),
             ),
           ],
         ),
