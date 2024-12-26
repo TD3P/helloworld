@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,24 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // これはアプリケーションのテーマです。
-        //
-        // 試してみてください: "flutter run"でアプリケーションを実行してみてください。
-        // アプリケーションには紫色のツールバーがあります。その後、アプリを終了せずに、
-        // 下のcolorSchemeのseedColorをColors.greenに変更して、
-        // "hot reload"を実行してみてください（変更を保存するか、Flutter対応のIDEで
-        // "hot reload"ボタンを押すか、コマンドラインでアプリを開始した場合は"r"を押します）。
-        //
-        // カウンターがゼロにリセットされないことに注意してください。
-        // リロード中にアプリケーションの状態は失われません。状態をリセットするには、
-        // hot restartを使用してください。
-        //
-        // これは値だけでなくコードにも適用されます: ほとんどのコード変更は
-        // hot reloadでテストできます。
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
