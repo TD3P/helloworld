@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,6 +55,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final _logger = Logger();
 
   void _incrementCounter() {
     setState(() {
@@ -63,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // setState()を呼び出さずに_counterを変更した場合、
       // buildメソッドは再度呼び出されず、何も起こらないように見えます。
       _counter++;
+      _logger.i('カウンターが増加しました');
     });
   }
 
