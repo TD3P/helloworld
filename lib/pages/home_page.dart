@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import '../components/counter_display.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -17,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
-      _logger.i('カウンターが増加しました');
+      _logger.i('カウンターが増加しました$_counter');
     });
   }
 
@@ -30,41 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'ボタンを押した回数:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('$_counter'),
-            ),
-            OutlinedButton(
-              onPressed: () {},
-              child: Text('$_counter'),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text('$_counter'),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.filter_drama),
-            ),
-            FilledButton(
-              onPressed: () {},
-              child: Text('$_counter'),
-            ),
-            FilledButton.tonal(
-              onPressed: () {},
-              child: Text('$_counter'),
-            ),
-          ],
+        child: CounterDisplay(
+          counter: _counter,
+          onIncrement: _incrementCounter,
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -74,4 +43,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-} 
+}
